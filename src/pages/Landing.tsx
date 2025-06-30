@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code2, Zap, Shield, BarChart3, FileText, Users, ArrowRight, CheckCircle, Sparkles, Brain, Target, TrendingUp } from 'lucide-react';
+import { Code2, Zap, Shield, BarChart3, FileText, Users, ArrowRight, CheckCircle, Sparkles, Brain, Target, TrendingUp, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Navbar } from '../components/Layout/Navbar';
 import { BackgroundEffects } from '../components/UI/BackgroundEffects';
@@ -78,9 +78,9 @@ export const Landing: React.FC = () => {
   ];
 
   const stats = [
-    { label: 'Code Files Analyzed', value: '1M+', icon: FileText },
-    { label: 'Issues Detected', value: '500K+', icon: Target },
-    { label: 'Happy Developers', value: '10K+', icon: Users },
+    { label: 'Code Files Analyzed', value: '500+', icon: FileText },
+    { label: 'Issues Detected', value: '200+', icon: Target },
+    { label: 'Happy Developers', value: '50+', icon: Users },
     { label: 'Languages Supported', value: '15+', icon: Code2 }
   ];
 
@@ -150,8 +150,8 @@ export const Landing: React.FC = () => {
                 </AnimatedButton>
               </Link>
               
-              <AnimatedButton variant="secondary" size="lg" icon={FileText} className="w-full sm:w-auto">
-                View Sample Report
+              <AnimatedButton variant="secondary" size="lg" icon={Play} className="w-full sm:w-auto">
+                Watch Demo
               </AnimatedButton>
             </motion.div>
 
