@@ -107,7 +107,7 @@ export const Landing: React.FC = () => {
             >
               <Sparkles className="h-4 w-4 text-blue-600 dark:text-blue-400" />
               <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
-                Powered by Gemini 2.0 Flash AI
+                Powered by Bolt AI
               </span>
             </motion.div>
 
@@ -394,7 +394,7 @@ export const Landing: React.FC = () => {
             >
               <div className="relative">
                 <img
-                  src="https://raw.githubusercontent.com/yaswanth-yashu/Lint/master/src/assets/bolt.jpg"
+                  src="https://raw.githubusercontent.com/yaswanth-yashu/Lint/master/src/assets/bolt-new.png"
                   alt="Bolt"
                   className="h-8 w-8 rounded-lg object-cover"
                 />
