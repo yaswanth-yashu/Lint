@@ -85,13 +85,13 @@ export const Landing: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-900 dark:to-blue-900 transition-colors duration-500">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-900 dark:to-blue-900 transition-colors duration-500 relative">
       <BackgroundEffects />
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -103,7 +103,7 @@ export const Landing: React.FC = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-600/10 to-purple-600/10 backdrop-blur-sm border border-blue-200/20 dark:border-blue-800/20 rounded-full mb-8"
+              className="inline-flex items-center space-x-2 px-3 sm:px-4 py-2 bg-gradient-to-r from-blue-600/10 to-purple-600/10 backdrop-blur-sm border border-blue-200/20 dark:border-blue-800/20 rounded-full mb-6 sm:mb-8"
             >
               <Sparkles className="h-4 w-4 text-blue-600 dark:text-blue-400" />
               <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
@@ -116,7 +116,7 @@ export const Landing: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight px-4"
             >
               <span className="bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 dark:from-white dark:via-blue-100 dark:to-purple-100 bg-clip-text text-transparent">
                 Professional
@@ -131,7 +131,7 @@ export const Landing: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed"
+              className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4"
             >
               Identify technical debt, code smells, and architectural issues in your codebase. 
               Get actionable insights powered by advanced AI analysis and comprehensive reports.
@@ -142,15 +142,15 @@ export const Landing: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
+              className="flex flex-col sm:flex-row gap-4 justify-center mb-12 sm:mb-16 px-4"
             >
-              <Link to="/dashboard">
-                <AnimatedButton size="lg" icon={ArrowRight}>
+              <Link to="/dashboard" className="w-full sm:w-auto">
+                <AnimatedButton size="lg" icon={ArrowRight} className="w-full sm:w-auto">
                   Start Free Analysis
                 </AnimatedButton>
               </Link>
               
-              <AnimatedButton variant="secondary" size="lg" icon={FileText}>
+              <AnimatedButton variant="secondary" size="lg" icon={FileText} className="w-full sm:w-auto">
                 View Sample Report
               </AnimatedButton>
             </motion.div>
@@ -160,7 +160,7 @@ export const Landing: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
+              className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 max-w-4xl mx-auto px-4"
             >
               {stats.map((stat, index) => (
                 <motion.div
@@ -171,12 +171,12 @@ export const Landing: React.FC = () => {
                   className="text-center"
                 >
                   <div className="flex justify-center mb-2">
-                    <stat.icon className="h-8 w-8 text-blue-600 dark:text-blue-400" />
+                    <stat.icon className="h-6 sm:h-8 w-6 sm:w-8 text-blue-600 dark:text-blue-400" />
                   </div>
-                  <div className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-1">
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-1">
                     {stat.value}
                   </div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                  <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                     {stat.label}
                   </div>
                 </motion.div>
@@ -187,25 +187,25 @@ export const Landing: React.FC = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 sm:py-20 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 px-4">
               Comprehensive Code Analysis
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4">
               Our AI-powered platform analyzes your codebase thoroughly to identify technical debt, 
               performance issues, and architectural problems.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
@@ -214,14 +214,14 @@ export const Landing: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ delay: feature.delay, duration: 0.6 }}
               >
-                <GlassCard className="p-8 h-full">
-                  <div className={`bg-gradient-to-r ${feature.color} p-4 rounded-2xl inline-block mb-6`}>
-                    <feature.icon className="h-8 w-8 text-white" />
+                <GlassCard className="p-6 sm:p-8 h-full">
+                  <div className={`bg-gradient-to-r ${feature.color} p-3 sm:p-4 rounded-2xl inline-block mb-4 sm:mb-6`}>
+                    <feature.icon className="h-6 sm:h-8 w-6 sm:w-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm sm:text-base">
                     {feature.description}
                   </p>
                 </GlassCard>
@@ -232,24 +232,24 @@ export const Landing: React.FC = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-20 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 sm:py-20 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 px-4">
               How It Works
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4">
               Get professional code analysis in three simple steps
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {steps.map((step, index) => (
               <motion.div
                 key={index}
@@ -264,19 +264,19 @@ export const Landing: React.FC = () => {
                   <div className="hidden md:block absolute top-16 left-full w-full h-0.5 bg-gradient-to-r from-blue-600/50 to-purple-600/50 transform -translate-x-1/2 z-0" />
                 )}
                 
-                <GlassCard className="p-8 relative z-10">
-                  <div className="relative mb-6">
-                    <div className={`bg-gradient-to-r ${step.color} text-white text-xl font-bold w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg`}>
+                <GlassCard className="p-6 sm:p-8 relative z-10">
+                  <div className="relative mb-4 sm:mb-6">
+                    <div className={`bg-gradient-to-r ${step.color} text-white text-lg sm:text-xl font-bold w-12 h-12 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg`}>
                       {step.step}
                     </div>
-                    <div className="bg-white/50 dark:bg-gray-800/50 p-3 rounded-xl inline-block">
-                      <step.icon className="h-8 w-8 text-blue-600 dark:text-blue-400" />
+                    <div className="bg-white/50 dark:bg-gray-800/50 p-2 sm:p-3 rounded-xl inline-block">
+                      <step.icon className="h-6 sm:h-8 w-6 sm:w-8 text-blue-600 dark:text-blue-400" />
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">
                     {step.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm sm:text-base">
                     {step.description}
                   </p>
                 </GlassCard>
@@ -287,9 +287,9 @@ export const Landing: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="py-16 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10 backdrop-blur-3xl" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -297,33 +297,33 @@ export const Landing: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 px-4">
               Ready to Improve Your Code Quality?
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8 sm:mb-12 max-w-3xl mx-auto px-4">
               Join thousands of developers who trust our platform to identify and fix technical debt. 
               Start your free analysis today.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-              <Link to="/dashboard">
-                <AnimatedButton size="lg" icon={ArrowRight}>
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-8 sm:mb-12 px-4">
+              <Link to="/dashboard" className="w-full sm:w-auto">
+                <AnimatedButton size="lg" icon={ArrowRight} className="w-full sm:w-auto">
                   Start Free Analysis
                 </AnimatedButton>
               </Link>
               
-              <div className="flex flex-wrap items-center justify-center gap-6 text-gray-600 dark:text-gray-400">
+              <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-gray-600 dark:text-gray-400">
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>Free to start</span>
+                  <span className="text-sm sm:text-base">Free to start</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>Secure & private</span>
+                  <span className="text-sm sm:text-base">Secure & private</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>No credit card</span>
+                  <span className="text-sm sm:text-base">No credit card</span>
                 </div>
               </div>
             </div>

@@ -48,27 +48,21 @@ export const Navbar: React.FC = () => {
         className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-b border-gray-200/20 dark:border-gray-700/20"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-20">
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-3 group">
+            <Link to="/" className="flex items-center group">
               <motion.div
                 whileHover={{ scale: 1.05, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
-                className="relative"
+                className="relative flex items-center"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity"></div>
-                <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 p-2.5 rounded-xl">
-                  <Code2 className="h-6 w-6 text-white" />
-                </div>
+                {/* Theme-based logo */}
+                <img
+                  src={theme === 'light' ? '/src/assets/lint_light thlogo.png' : '/src/assets/lint_black_thlogo.png'}
+                  alt="TechDebt Analyzer"
+                  className="h-20 w-auto object-contain"
+                />
               </motion.div>
-              <div className="hidden sm:block">
-                <h1 className="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
-                  TechDebt Analyzer
-                </h1>
-                <p className="text-xs text-gray-500 dark:text-gray-400 -mt-1">
-                  AI-Powered Code Analysis
-                </p>
-              </div>
             </Link>
 
             {/* Desktop Navigation */}

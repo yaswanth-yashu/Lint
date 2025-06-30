@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export const BackgroundEffects: React.FC = () => {
   return (
-    <div className="fixed inset-0 overflow-hidden pointer-events-none">
+    <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
       {/* Animated gradient orbs */}
       <motion.div
         animate={{
@@ -16,7 +16,7 @@ export const BackgroundEffects: React.FC = () => {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"
+        className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-3xl"
       />
       
       <motion.div
@@ -31,7 +31,7 @@ export const BackgroundEffects: React.FC = () => {
           ease: "easeInOut",
           delay: 5
         }}
-        className="absolute top-3/4 right-1/4 w-80 h-80 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"
+        className="absolute top-3/4 right-1/4 w-80 h-80 bg-gradient-to-r from-purple-400/10 to-pink-400/10 rounded-full blur-3xl"
       />
 
       <motion.div
@@ -46,16 +46,16 @@ export const BackgroundEffects: React.FC = () => {
           ease: "easeInOut",
           delay: 10
         }}
-        className="absolute top-1/2 right-1/3 w-64 h-64 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 rounded-full blur-3xl"
+        className="absolute top-1/2 right-1/3 w-64 h-64 bg-gradient-to-r from-cyan-400/10 to-blue-400/10 rounded-full blur-3xl"
       />
 
       {/* Floating particles */}
-      {Array.from({ length: 20 }).map((_, i) => (
+      {Array.from({ length: 15 }).map((_, i) => (
         <motion.div
           key={i}
           animate={{
             y: [0, -100, 0],
-            opacity: [0, 1, 0],
+            opacity: [0, 0.3, 0],
           }}
           transition={{
             duration: Math.random() * 10 + 10,
@@ -63,7 +63,7 @@ export const BackgroundEffects: React.FC = () => {
             delay: Math.random() * 10,
             ease: "easeInOut"
           }}
-          className="absolute w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-30"
+          className="absolute w-1 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-20"
           style={{
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,
@@ -72,7 +72,7 @@ export const BackgroundEffects: React.FC = () => {
       ))}
 
       {/* Grid pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:50px_50px] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.01)_1px,transparent_1px)] bg-[size:50px_50px] dark:bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)]" />
     </div>
   );
 };

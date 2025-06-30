@@ -190,10 +190,10 @@ export const Dashboard: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-900 dark:to-blue-900 transition-colors duration-500">
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-900 dark:to-blue-900 transition-colors duration-500 relative">
         <BackgroundEffects />
         <Navbar />
-        <div className="flex items-center justify-center h-96">
+        <div className="flex items-center justify-center h-96 relative z-10">
           <div className="relative">
             <div className="animate-spin rounded-full h-16 w-16 border-4 border-blue-600 border-t-transparent"></div>
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 opacity-20 blur-lg"></div>
@@ -204,29 +204,29 @@ export const Dashboard: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-900 dark:to-blue-900 transition-colors duration-500">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-900 dark:to-blue-900 transition-colors duration-500 relative">
       <BackgroundEffects />
       <Navbar />
       
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pt-24">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 pt-20 sm:pt-24 relative z-10">
         {/* Welcome Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-12"
+          className="mb-8 sm:mb-12"
         >
-          <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 dark:from-white dark:via-blue-100 dark:to-purple-100 bg-clip-text text-transparent mb-4">
+          <div className="text-center mb-6 sm:mb-8">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 dark:from-white dark:via-blue-100 dark:to-purple-100 bg-clip-text text-transparent mb-4">
               Welcome back, {user?.email?.split('@')[0]}!
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto px-4">
               Analyze your codebase for technical debt and get actionable insights to improve code quality.
             </p>
           </div>
         </motion.div>
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 mb-8 sm:mb-12">
           {[
             {
               icon: Code2,
@@ -263,18 +263,18 @@ export const Dashboard: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: stat.delay, duration: 0.5 }}
             >
-              <GlassCard className="p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">
+              <GlassCard className="p-3 sm:p-4 lg:p-6">
+                <div className="flex flex-col lg:flex-row items-center lg:justify-between gap-2 lg:gap-3">
+                  <div className="text-center lg:text-left flex-1">
+                    <p className="text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">
                       {stat.label}
                     </p>
-                    <p className="text-2xl font-bold text-gray-900 dark:text-white">
+                    <p className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 dark:text-white">
                       {stat.value}
                     </p>
                   </div>
-                  <div className={`bg-gradient-to-r ${stat.color} p-3 rounded-xl`}>
-                    <stat.icon className="h-6 w-6 text-white" />
+                  <div className={`bg-gradient-to-r ${stat.color} p-2 sm:p-2.5 lg:p-3 rounded-xl flex-shrink-0`}>
+                    <stat.icon className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-white" />
                   </div>
                 </div>
               </GlassCard>
@@ -283,9 +283,9 @@ export const Dashboard: React.FC = () => {
         </div>
 
         {/* Projects Section */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 sm:mb-8">
           <div>
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-2">
               Your Projects
             </h2>
             <p className="text-gray-600 dark:text-gray-400">
@@ -296,6 +296,7 @@ export const Dashboard: React.FC = () => {
             onClick={() => setUploadModalOpen(true)}
             icon={Plus}
             size="lg"
+            className="w-full sm:w-auto"
           >
             New Analysis
           </AnimatedButton>
@@ -307,21 +308,22 @@ export const Dashboard: React.FC = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <GlassCard className="text-center py-16">
-              <div className="max-w-md mx-auto">
+            <GlassCard className="text-center py-12 sm:py-16">
+              <div className="max-w-md mx-auto px-4">
                 <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-4 rounded-2xl inline-block mb-6">
-                  <Code2 className="h-12 w-12 text-white" />
+                  <Code2 className="h-10 sm:h-12 w-10 sm:w-12 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4">
                   No projects yet
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 leading-relaxed">
                   Upload your first project to start analyzing technical debt and get actionable insights to improve your code quality.
                 </p>
                 <AnimatedButton
                   onClick={() => setUploadModalOpen(true)}
                   icon={Plus}
                   size="lg"
+                  className="w-full sm:w-auto"
                 >
                   Upload Your First Project
                 </AnimatedButton>
@@ -329,7 +331,7 @@ export const Dashboard: React.FC = () => {
             </GlassCard>
           </motion.div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
             {projects.map((project, index) => (
               <motion.div
                 key={project.id}
