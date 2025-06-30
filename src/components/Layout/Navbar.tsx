@@ -4,6 +4,8 @@ import { Menu, X, Sun, Moon, Code2, Sparkles, Zap } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
 import { useTheme } from '../../contexts/ThemeContext';
 import { Link, useLocation } from 'react-router-dom';
+import lightLogo from '../../assets/lint_light thlogo.png';
+import darkLogo from '../../assets/lint_black_thlogo.png';
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
