@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code2, Zap, Shield, BarChart3, FileText, Users, ArrowRight, CheckCircle, Sparkles, Brain, Target, TrendingUp, Play } from 'lucide-react';
+import { Code2, Zap, Shield, BarChart3, FileText, Users, ArrowRight, CheckCircle, Sparkles, Brain, Target, TrendingUp, Play, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Navbar } from '../components/Layout/Navbar';
 import { BackgroundEffects } from '../components/UI/BackgroundEffects';
@@ -330,6 +330,102 @@ export const Landing: React.FC = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="relative py-12 sm:py-16 border-t border-gray-200/20 dark:border-gray-700/20 bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col lg:flex-row justify-between items-center gap-6 lg:gap-8"
+          >
+            {/* Developer Credits */}
+            <div className="text-center lg:text-left">
+              <p className="text-gray-600 dark:text-gray-400 mb-2">
+                Developed for{' '}
+                <span className="font-semibold text-blue-600 dark:text-blue-400">Bolt Hackathon</span>
+              </p>
+              <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-sm">
+                <span className="text-gray-500 dark:text-gray-500">by</span>
+                <div className="flex items-center gap-4">
+                  <motion.a
+                    href="https://www.linkedin.com/in/yaswanthd/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex items-center space-x-2 px-3 py-1.5 bg-gradient-to-r from-blue-600/10 to-purple-600/10 hover:from-blue-600/20 hover:to-purple-600/20 backdrop-blur-sm border border-blue-200/20 dark:border-blue-800/20 rounded-lg transition-all duration-300 group"
+                  >
+                    <span className="font-medium text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                      D. Yaswanth
+                    </span>
+                    <ExternalLink className="h-3 w-3 text-gray-500 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
+                  </motion.a>
+                  
+                  <span className="text-gray-400 dark:text-gray-600">&</span>
+                  
+                  <motion.a
+                    href="https://www.linkedin.com/in/sai-seshu/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex items-center space-x-2 px-3 py-1.5 bg-gradient-to-r from-blue-600/10 to-purple-600/10 hover:from-blue-600/20 hover:to-purple-600/20 backdrop-blur-sm border border-blue-200/20 dark:border-blue-800/20 rounded-lg transition-all duration-300 group"
+                  >
+                    <span className="font-medium text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                      S. Seshu
+                    </span>
+                    <ExternalLink className="h-3 w-3 text-gray-500 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
+                  </motion.a>
+                </div>
+              </div>
+            </div>
+
+            {/* Bolt Logo */}
+            <motion.a
+              href="https://bolt.new"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center space-x-3 px-4 py-3 bg-gradient-to-r from-gray-900/5 to-gray-800/5 dark:from-white/5 dark:to-gray-100/5 hover:from-gray-900/10 hover:to-gray-800/10 dark:hover:from-white/10 dark:hover:to-gray-100/10 backdrop-blur-sm border border-gray-200/30 dark:border-gray-700/30 rounded-xl transition-all duration-300 group"
+            >
+              <div className="relative">
+                <img
+                  src="https://raw.githubusercontent.com/yaswanth-yashu/Lint/master/src/assets/bolt.jpg"
+                  alt="Bolt"
+                  className="h-8 w-8 rounded-lg object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+              <div className="text-left">
+                <div className="text-sm font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  Powered by Bolt
+                </div>
+                <div className="text-xs text-gray-500 dark:text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors">
+                  bolt.new
+                </div>
+              </div>
+              <ExternalLink className="h-4 w-4 text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
+            </motion.a>
+          </motion.div>
+
+          {/* Copyright */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="mt-8 pt-6 border-t border-gray-200/20 dark:border-gray-700/20 text-center"
+          >
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              © {new Date().getFullYear()} TechDebt Analyzer. Built for developers, by developers.
+            </p>
+          </motion.div>
+        </div>
+      </footer>
     </div>
   );
 };
