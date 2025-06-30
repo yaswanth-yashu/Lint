@@ -60,7 +60,7 @@ export const Navbar: React.FC = () => {
               >
                 {/* Theme-based logo */}
                 <img
-                  src={theme === 'light' ? '/src/assets/lint_light thlogo.png' : '/src/assets/lint_black_thlogo.png'}
+                  src={theme === 'light' ? 'https://raw.githubusercontent.com/yaswanth-yashu/Lint/master/src/assets/lint_light%20thlogo.png' : 'https://raw.githubusercontent.com/yaswanth-yashu/Lint/master/src/assets/lint_black_thlogo.png'}
                   alt="TechDebt Analyzer"
                   className="h-20 w-auto object-contain"
                 />
