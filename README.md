@@ -315,11 +315,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-<div align="center">
-  <p>Built with ❤️ by the TechDebt Analyzer Team</p>
-  <p>
-    <a href="https://github.com/yourusername/techdebt-analyzer">GitHub</a> •
-    <a href="https://techdebt-analyzer.netlify.app">Live Demo</a> •
-    <a href="mailto:support@techdebt-analyzer.com">Support</a>
-  </p>
-</div>
